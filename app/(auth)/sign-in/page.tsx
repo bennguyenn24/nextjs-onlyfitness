@@ -7,7 +7,7 @@ const SignIn = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: { preventDefault: () => void; }) => {
         console.log("hello world");
         e.preventDefault();
         setEmail("");
@@ -17,9 +17,9 @@ const SignIn = () => {
     return (
         <div className="flex flex-col justify-center items-center min-h-screen bg-black">
             <h1 className="flex-col text-center my-auto mb-9 max-w-[500px] leading-loose">
-                "One thing you gotta know about me is I have absolutely no
+                &quot;One thing you gotta know about me is I have absolutely no
                 filter. I have no problem saying what the hell I think of
-                someone." - Kobe Bryant
+                someone.&quot; - Kobe Bryant
             </h1>
             <div className="w-full max-w-xs">
                 <Image
