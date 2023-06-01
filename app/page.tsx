@@ -9,7 +9,7 @@ export default function Home() {
                     &quot;I can&apos;t relate to lazy people. We don&apos;t speak the same
                     language. I don&apos;t understand you. I don&apos;t want to understand
                     you.&quot; - <br />  Kobe Bryant
-                </h2>
+                </h2>0
             </div>
             <Link
                 className="px-4 py-2 bg-yellow-900 rounded-md hover:bg-yellow-600"

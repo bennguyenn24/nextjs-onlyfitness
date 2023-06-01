@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-// import Image from '../public/logo.png';
 
 const SignIn = () => {
     const [email, setEmail] = useState("");
