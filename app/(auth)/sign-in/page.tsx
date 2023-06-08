@@ -1,18 +1,8 @@
 "use client";
-import { useState } from "react";
+import { SignIn } from "@clerk/clerk-react";
 import Image from "next/image";
 
-const SignIn = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-
-    const handleSubmit = (e: { preventDefault: () => void; }) => {
-        console.log("hello world");
-        e.preventDefault();
-        setEmail("");
-        setPassword("");
-    };
-
+const SignInPage = () => {
     return (
         <div className="flex flex-col justify-center items-center min-h-screen bg-black">
             <h1 className="flex-col text-center my-auto mb-9 max-w-[500px] leading-loose">
@@ -28,60 +18,16 @@ const SignIn = () => {
                     width="400"
                     height="200"
                 />
-                <form
-                    className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-                    onSubmit={handleSubmit}
-                >
-                    <h2 className="text-2xl text-center mb-6 text-gray-700">
-                        Sign in
-                    </h2>
-                    <div className="mb-4">
-                        <label
-                            className="block text-gray-700 text-sm font-bold mb-2"
-                            htmlFor="email"
-                        >
-                            Email
-                        </label>
-                        <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="email"
-                            type="email"
-                            placeholder="Email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                    </div>
-                    <div className="mb-6">
-                        <label
-                            className="block text-gray-700 text-sm font-bold mb-2"
-                            htmlFor="password"
-                        >
-                            Password
-                        </label>
-                        <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="password"
-                            type="password"
-                            placeholder="Password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                    </div>
-                    <div className="flex items-center justify-between">
-                        <button
-                            className="bg-yellow-900 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                            type="submit"
-                        >
-                            Sign In
-                        </button>
-                        <button className="bg-yellow-900 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                            Forgot <br /> password
-                        </button>
-                    </div>
-                </form>
+                <main className="mt-6">
+                    <SignIn
+                        path="/sign-in"
+                        routing="path"
+                        signInUrl="/sign-in"
+                    />
+                </main>
             </div>
         </div>
     );
 };
 
-export default SignIn;
+export default SignInPage;
